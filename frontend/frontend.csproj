@@ -170,10 +170,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CiclosController.cs" />
+    <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HorariosController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\SeccionesController.cs" />
     <Compile Include="Datos\AsesoriaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,8 +207,11 @@
     <Compile Include="Datos\C__MigrationHistory.cs">
       <DependentUpon>AsesoriaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dominio\Ciclos.cs" />
+    <Compile Include="Dominio\Curso.cs" />
     <Compile Include="Dominio\Horario.cs" />
     <Compile Include="Dominio\Horarios.cs" />
+    <Compile Include="Dominio\Secciones.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -294,6 +300,9 @@
     <Content Include="Views\Horarios\Edit.cshtml" />
     <Content Include="Views\Horarios\Create.cshtml" />
     <Content Include="Views\Horarios\Delete.cshtml" />
+    <Content Include="Views\Cursos\Index.cshtml" />
+    <Content Include="Views\Secciones\Index.cshtml" />
+    <Content Include="Views\Ciclos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

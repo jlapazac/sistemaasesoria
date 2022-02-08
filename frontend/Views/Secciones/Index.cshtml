@@ -1,0 +1,40 @@
+﻿@model IEnumerable<frontend.Dominio.Secciones>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @ViewBag.Titulo01
+        </th>
+        <th>
+            @ViewBag.Titulo02
+        </th>
+        <th>
+            @ViewBag.Titulo03
+        </th>
+        <th>
+            @ViewBag.Titulo04
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codseccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codseccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.campus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+        </tr>
+    }
+</table>

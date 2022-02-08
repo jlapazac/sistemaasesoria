@@ -42,44 +42,44 @@
         </th>
         <th></th>
     </tr>
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.codhorario)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.codciclo)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.desciclo)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.codcurso)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.descurso)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.codseccion)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.desseccion)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.finicio)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ffinal)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.estado)
-    </td>
-    <td>
-        @Html.ActionLink("Editar", "Edit", new { id1 = item.codhorario }) |
-        @Html.ActionLink("Detalle", "Details", new { id = item.codhorario }) |
-        @Html.ActionLink("Eliminar", "Delete", new { id = item.codhorario })
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codhorario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codciclo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desciclo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codcurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.codseccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desseccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ffinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id1 = item.codhorario }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.codhorario }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.codhorario })
+            </td>
+        </tr>
     }
 </table>

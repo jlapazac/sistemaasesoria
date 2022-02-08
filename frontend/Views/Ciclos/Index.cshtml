@@ -1,0 +1,46 @@
+﻿@model IEnumerable<frontend.Dominio.Ciclos>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @ViewBag.Titulo01
+        </th>
+        <th>
+            @ViewBag.Titulo02
+        </th>
+        <th>
+            @ViewBag.Titulo03
+        </th>
+        <th>
+            @ViewBag.Titulo04
+        </th>
+        <th>
+            @ViewBag.Titulo05
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codciclo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desciclo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.desde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hasta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+        </tr>
+    }
+</table>
