@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="platonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ciclo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codciclo" Type="nchar" MaxLength="10" />
+          <Property Name="desciclo" Type="nchar" MaxLength="50" />
+          <Property Name="desde" Type="datetime" />
+          <Property Name="hasta" Type="datetime" />
+          <Property Name="estado" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="curso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codcurso" Type="nchar" MaxLength="6" />
+          <Property Name="descurso" Type="nchar" MaxLength="50" />
+          <Property Name="nivel" Type="int" />
+          <Property Name="malla" Type="int" />
+          <Property Name="estado" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="horario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codhorario" Type="nchar" MaxLength="10" />
+          <Property Name="codciclo" Type="nchar" MaxLength="10" />
+          <Property Name="codcurso" Type="nchar" MaxLength="6" />
+          <Property Name="codseccion" Type="nchar" MaxLength="6" />
+          <Property Name="finicio" Type="datetime" Nullable="false" />
+          <Property Name="ffinal" Type="datetime" Nullable="false" />
+          <Property Name="estado" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="seccion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codseccion" Type="nchar" MaxLength="6" />
+          <Property Name="desseccion" Type="nchar" MaxLength="50" />
+          <Property Name="campus" Type="nchar" MaxLength="20" />
+          <Property Name="estado" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="platonModelStoreContainer">
+          <EntitySet Name="ciclo" EntityType="Self.ciclo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="curso" EntityType="Self.curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="horario" EntityType="Self.horario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="seccion" EntityType="Self.seccion" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="platonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ciclo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codciclo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="desciclo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="desde" Type="DateTime" Precision="3" />
+          <Property Name="hasta" Type="DateTime" Precision="3" />
+          <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="curso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codcurso" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="descurso" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="nivel" Type="Int32" />
+          <Property Name="malla" Type="Int32" />
+          <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="horario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codhorario" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="codciclo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="codcurso" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="codseccion" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="finicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ffinal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="seccion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codseccion" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Name="desseccion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="campus" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="estado" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="platonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ciclo" EntityType="Self.ciclo" />
+          <EntitySet Name="curso" EntityType="Self.curso" />
+          <EntitySet Name="horario" EntityType="Self.horario" />
+          <EntitySet Name="seccion" EntityType="Self.seccion" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="platonModelStoreContainer" CdmEntityContainer="platonEntities">
+          <EntitySetMapping Name="ciclo">
+            <EntityTypeMapping TypeName="platonModel.ciclo">
+              <MappingFragment StoreEntitySet="ciclo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codciclo" ColumnName="codciclo" />
+                <ScalarProperty Name="desciclo" ColumnName="desciclo" />
+                <ScalarProperty Name="desde" ColumnName="desde" />
+                <ScalarProperty Name="hasta" ColumnName="hasta" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="curso">
+            <EntityTypeMapping TypeName="platonModel.curso">
+              <MappingFragment StoreEntitySet="curso">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codcurso" ColumnName="codcurso" />
+                <ScalarProperty Name="descurso" ColumnName="descurso" />
+                <ScalarProperty Name="nivel" ColumnName="nivel" />
+                <ScalarProperty Name="malla" ColumnName="malla" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="horario">
+            <EntityTypeMapping TypeName="platonModel.horario">
+              <MappingFragment StoreEntitySet="horario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codhorario" ColumnName="codhorario" />
+                <ScalarProperty Name="codciclo" ColumnName="codciclo" />
+                <ScalarProperty Name="codcurso" ColumnName="codcurso" />
+                <ScalarProperty Name="codseccion" ColumnName="codseccion" />
+                <ScalarProperty Name="finicio" ColumnName="finicio" />
+                <ScalarProperty Name="ffinal" ColumnName="ffinal" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seccion">
+            <EntityTypeMapping TypeName="platonModel.seccion">
+              <MappingFragment StoreEntitySet="seccion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codseccion" ColumnName="codseccion" />
+                <ScalarProperty Name="desseccion" ColumnName="desseccion" />
+                <ScalarProperty Name="campus" ColumnName="campus" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

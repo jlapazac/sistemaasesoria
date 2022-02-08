@@ -1,0 +1,86 @@
+﻿@model frontend.Dominio.Horario
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>@ViewData["Message"]</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Modifica datos del Horario</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.codhorario, "Codigo", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.codhorario, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.codhorario, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.codciclo, "Ciclo", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.codciclo, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.codciclo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.codcurso, "Curso", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.codcurso, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.codcurso, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.codseccion, "Seccion", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.codseccion, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.codseccion, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.finicio, "Fecha Hora Inicio", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.finicio, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.finicio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ffinal, "Fecha Hora Fin", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ffinal, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ffinal, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.estado, "Estado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.estado, new { htmlAttribute = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Grabar" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Retorno a la lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

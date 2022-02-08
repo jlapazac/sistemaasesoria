@@ -1,0 +1,63 @@
+﻿@model frontend.Dominio.Horario
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>@ViewData["Message"]</h2>
+<h3>Esta seguro de ELIMINAR este Horario?</h3>
+<div>
+    <h4>Alumno</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @ViewBag.Titulo01
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.codhorario)
+        </dd>
+        <dt>
+            @ViewBag.Titulo02
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.codciclo)
+        </dd>
+        <dt>
+            @ViewBag.Titulo03
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.codcurso)
+        </dd>
+        <dt>
+            @ViewBag.Titulo04
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.codseccion)
+        </dd>
+        <dt>
+            @ViewBag.Titulo05
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.finicio)
+        </dd>
+        <dt>
+            @ViewBag.Titulo06
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ffinal)
+        </dd>
+        <dt>
+            @ViewBag.Titulo07
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+    </dl>
+    @using(Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Retorno a la Lista", "Index")
+        </div>
+    }
+</div>

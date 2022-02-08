@@ -1,0 +1,85 @@
+﻿@model IEnumerable<frontend.Dominio.Horarios>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewData["Message"]</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Horario", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @ViewBag.Titulo01
+        </th>
+        <th>
+            @ViewBag.Titulo02
+        </th>
+        <th>
+            @ViewBag.Titulo03
+        </th>
+        <th>
+            @ViewBag.Titulo04
+        </th>
+        <th>
+            @ViewBag.Titulo05
+        </th>
+        <th>
+            @ViewBag.Titulo06
+        </th>
+        <th>
+            @ViewBag.Titulo07
+        </th>
+        <th>
+            @ViewBag.Titulo08
+        </th>
+        <th>
+            @ViewBag.Titulo09
+        </th>
+        <th>
+            @ViewBag.Titulo10
+        </th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.codhorario)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.codciclo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.desciclo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.codcurso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.descurso)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.codseccion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.desseccion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.finicio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ffinal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.estado)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Edit", new { id1 = item.codhorario }) |
+        @Html.ActionLink("Detalle", "Details", new { id = item.codhorario }) |
+        @Html.ActionLink("Eliminar", "Delete", new { id = item.codhorario })
+    </td>
+</tr>
+    }
+</table>
